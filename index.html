@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Hi! I'm Ion Sugara Putra Subekti. An Information Systems student and IT & Cybersecurity enthusiast from Indonesia."/>
+<title>Ion Sugara Putra Subekti — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0d14;
+  --bg2:#12121e;
+  --card:#16162a;
+  --card2:#1a1a30;
+  --border:#252540;
+  --accent:#7c6ff7;
+  --accent2:#a78bfa;
+  --green:#34d399;
+  --pink:#f472b6;
+  --text:#f0f0ff;
+  --sub:#a0a0c0;
+  --muted:#60607a;
+  --sans:'Plus Jakarta Sans',sans-serif;
+  --radius:16px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:4px}
+
+/* ── NAV ───────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:0 5%;
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(13,13,20,0.8);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-size:17px;font-weight:800;
+  background:linear-gradient(135deg,var(--accent2),var(--pink));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.nav-links{display:flex;gap:6px}
+.nav-links a{
+  font-size:13px;font-weight:500;color:var(--sub);
+  text-decoration:none;padding:6px 14px;border-radius:8px;
+  transition:all .2s;
+}
+.nav-links a:hover{color:var(--text);background:var(--card2)}
+
+/* ── HERO ──────────────────────────────────────── */
+#hero{
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:80px 5% 60px;
+  position:relative;overflow:hidden;
+  text-align:center;
+}
+.hero-blob{
+  position:absolute;pointer-events:none;
+}
+.hero-blob-1{
+  top:-200px;left:-200px;width:700px;height:700px;
+  background:radial-gradient(circle,rgba(124,111,247,.15) 0%,transparent 70%);
+}
+.hero-blob-2{
+  bottom:-200px;right:-200px;width:600px;height:600px;
+  background:radial-gradient(circle,rgba(244,114,182,.1) 0%,transparent 70%);
+}
+.hero-inner{position:relative;z-index:1;max-width:700px}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:100px;padding:6px 16px;
+  font-size:13px;color:var(--sub);margin-bottom:28px;
+}
+.badge-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero-greeting{font-size:18px;color:var(--sub);font-weight:500;margin-bottom:12px}
+.hero-name{
+  font-size:clamp(36px,6vw,64px);font-weight:800;line-height:1.1;
+  margin-bottom:16px;
+}
+.hero-name .line1{color:var(--text)}
+.hero-name .line2{
+  background:linear-gradient(135deg,var(--accent2) 0%,var(--pink) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-sub{
+  font-size:16px;color:var(--sub);max-width:480px;margin:0 auto 36px;font-weight:400;
+}
+.hero-sub span{color:var(--accent2);font-weight:600}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{
+  font-size:14px;font-weight:600;padding:12px 24px;
+  border-radius:10px;text-decoration:none;
+  border:none;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(124,111,247,.4)}
+.btn-ghost{background:var(--card);color:var(--sub);border:1px solid var(--border)}
+.btn-ghost:hover{color:var(--text);border-color:var(--accent);transform:translateY(-2px)}
+
+/* ── LAYOUT ────────────────────────────────────── */
+.section{padding:80px 5%;max-width:1100px;margin:0 auto}
+.section-full{padding:80px 5%}
+.sec-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent2);
+  margin-bottom:12px;
+}
+.sec-eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--accent2);border-radius:2px}
+.sec-title{font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--text);margin-bottom:48px}
+.sec-title span{
+  background:linear-gradient(135deg,var(--accent2),var(--pink));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+
+/* ── ABOUT ─────────────────────────────────────── */
+#about{border-top:1px solid var(--border)}
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+.about-img-wrap{
+  position:relative;
+}
+.about-img-card{
+  background:linear-gradient(135deg,var(--accent) 0%,var(--pink) 100%);
+  border-radius:24px;padding:3px;
+}
+.about-img-inner{
+  background:var(--card);border-radius:22px;
+  width:100%;aspect-ratio:1;
+  display:flex;align-items:center;justify-content:center;
+  font-size:80px;
+}
+.about-floating{
+  position:absolute;bottom:-16px;right:-16px;
+  background:var(--card2);border:1px solid var(--border);
+  border-radius:14px;padding:14px 18px;
+  display:flex;flex-direction:column;gap:2px;
+}
+.float-num{font-size:22px;font-weight:800;color:var(--accent2)}
+.float-label{font-size:11px;color:var(--muted)}
+.about-text p{font-size:15px;color:var(--sub);line-height:1.8;margin-bottom:16px}
+.about-text p strong{color:var(--text)}
+.about-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{
+  font-size:12px;font-weight:600;padding:5px 14px;border-radius:100px;
+  background:var(--card2);border:1px solid var(--border);color:var(--sub);
+}
+
+/* ── STATS ROW ─────────────────────────────────── */
+.stats-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  max-width:1100px;margin:0 auto;padding:0 5% 80px;
+}
+.stat-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:24px;text-align:center;
+  transition:border-color .2s,transform .2s;
+}
+.stat-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.stat-n{font-size:32px;font-weight:800;background:linear-gradient(135deg,var(--accent2),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-l{font-size:13px;color:var(--muted);margin-top:4px}
+
+/* ── SKILLS ────────────────────────────────────── */
+#skills{border-top:1px solid var(--border)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.skill-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;
+  transition:all .25s;
+}
+.skill-card:hover{border-color:var(--accent2);transform:translateY(-3px);box-shadow:0 12px 40px rgba(124,111,247,.1)}
+.sk-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.sk-icon{
+  width:42px;height:42px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+  background:rgba(124,111,247,.12);flex-shrink:0;
+}
+.sk-title{font-size:14px;font-weight:700;color:var(--text)}
+.sk-tags{display:flex;flex-wrap:wrap;gap:6px}
+.stag{
+  font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;
+}
+.stag-purple{background:rgba(167,139,250,.1);color:var(--accent2);border:1px solid rgba(167,139,250,.2)}
+.stag-green{background:rgba(52,211,153,.1);color:var(--green);border:1px solid rgba(52,211,153,.2)}
+.stag-pink{background:rgba(244,114,182,.1);color:var(--pink);border:1px solid rgba(244,114,182,.2)}
+.stag-blue{background:rgba(96,165,250,.1);color:#60a5fa;border:1px solid rgba(96,165,250,.2)}
+
+/* ── EDUCATION ─────────────────────────────────── */
+#education{border-top:1px solid var(--border)}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.edu-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;
+  display:flex;gap:16px;align-items:flex-start;
+  transition:border-color .2s;
+}
+.edu-card:hover{border-color:var(--accent2)}
+.edu-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;
+}
+.edu-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px}
+.edu-sub{font-size:13px;color:var(--sub);margin-bottom:8px}
+.edu-period{font-size:11px;font-weight:600;color:var(--accent2);
+  background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2);
+  display:inline-block;padding:2px 10px;border-radius:100px;
+}
+
+/* ── EXPERIENCE ────────────────────────────────── */
+#experience{border-top:1px solid var(--border)}
+.exp-list{display:flex;flex-direction:column;gap:16px}
+.exp-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;
+  display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;
+  transition:border-color .2s,transform .2s;
+}
+.exp-card:hover{border-color:var(--accent2);transform:translateX(4px)}
+.exp-card.active-exp{border-color:rgba(52,211,153,.3);background:rgba(52,211,153,.03)}
+.exp-logo{
+  width:52px;height:52px;border-radius:12px;
+  background:var(--card2);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;
+}
+.exp-role{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}
+.exp-company{font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:4px}
+.exp-period{font-size:12px;color:var(--muted);margin-bottom:14px}
+.exp-active-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:700;color:var(--green);
+  background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2);
+  border-radius:100px;padding:2px 10px;margin-bottom:14px;
+}
+.exp-active-badge span{width:6px;height:6px;border-radius:50%;background:var(--green);display:block;animation:pulse 2s infinite}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:7px}
+.exp-bullets li{font-size:13px;color:var(--sub);padding-left:16px;position:relative;line-height:1.6}
+.exp-bullets li::before{content:'→';position:absolute;left:0;color:var(--accent2);font-size:11px}
+
+/* ── CERTS ─────────────────────────────────────── */
+#certs{border-top:1px solid var(--border)}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.cert-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;
+  display:flex;gap:16px;align-items:flex-start;
+  transition:all .25s;
+}
+.cert-card:hover{border-color:var(--accent2);transform:translateY(-3px)}
+.cert-badge{
+  width:48px;height:48px;border-radius:12px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+}
+.cert-badge.cisco{background:rgba(0,188,255,.1);border:1px solid rgba(0,188,255,.2)}
+.cert-badge.udemy{background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2)}
+.cert-badge.ati{background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.2)}
+.cert-badge.forti{background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2)}
+.cert-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;line-height:1.4}
+.cert-issuer{font-size:12px;color:var(--sub)}
+.cert-date{
+  display:inline-block;margin-top:8px;
+  font-size:11px;font-weight:600;color:var(--accent2);
+  background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2);
+  padding:2px 10px;border-radius:100px;
+}
+
+/* ── PROJECTS ──────────────────────────────────── */
+#projects{border-top:1px solid var(--border)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.proj-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;transition:all .25s;display:flex;flex-direction:column;
+}
+.proj-card:hover{border-color:var(--accent2);transform:translateY(-4px);box-shadow:0 16px 48px rgba(124,111,247,.12)}
+.proj-thumb{
+  height:140px;display:flex;align-items:center;justify-content:center;font-size:48px;
+  background:linear-gradient(135deg,var(--card2) 0%,var(--bg2) 100%);
+  border-bottom:1px solid var(--border);position:relative;overflow:hidden;
+}
+.proj-thumb::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(124,111,247,.08),rgba(244,114,182,.06));
+}
+.proj-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:10px}
+.proj-name{font-size:14px;font-weight:700;color:var(--text)}
+.proj-desc{font-size:13px;color:var(--sub);line-height:1.6;flex:1}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px}
+
+/* ── CONTACT ───────────────────────────────────── */
+#contact{border-top:1px solid var(--border)}
+.contact-wrap{
+  background:var(--card);border:1px solid var(--border);border-radius:24px;
+  padding:56px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.contact-wrap::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% -20%,rgba(124,111,247,.1),transparent 70%);
+  pointer-events:none;
+}
+.contact-title{font-size:clamp(24px,4vw,40px);font-weight:800;margin-bottom:12px}
+.contact-sub{font-size:15px;color:var(--sub);max-width:420px;margin:0 auto 36px}
+.contact-cards{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.contact-card{
+  background:var(--card2);border:1px solid var(--border);border-radius:14px;
+  padding:18px 24px;text-decoration:none;color:var(--sub);
+  display:flex;flex-direction:column;align-items:center;gap:6px;min-width:160px;
+  transition:all .25s;
+}
+.contact-card:hover{border-color:var(--accent2);color:var(--text);transform:translateY(-3px)}
+.contact-card-icon{font-size:24px}
+.contact-card-label{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent2)}
+.contact-card-val{font-size:13px;font-weight:500}
+
+/* ── FOOTER ────────────────────────────────────── */
+footer{
+  border-top:1px solid var(--border);
+  padding:28px 5%;text-align:center;
+  font-size:13px;color:var(--muted);
+}
+footer span{color:var(--accent2)}
+
+/* ── FADE IN ───────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:768px){
+  nav{padding:0 5%}
+  .nav-links{display:none}
+  .about-grid,.edu-grid{grid-template-columns:1fr}
+  .about-img-wrap{max-width:260px;margin:0 auto}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .exp-card{grid-template-columns:1fr}
+  .exp-logo{display:none}
+  .contact-wrap{padding:32px 20px}
+  .section,.section-full{padding:60px 5%}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Ion Sugara</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#certs">Certs</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Available for internship & opportunities
+    </div>
+    <p class="hero-greeting">Hi Guys! 👋</p>
+    <h1 class="hero-name">
+      <div class="line1">I'm Ion Sugara</div>
+      <div class="line2">Putra Subekti</div>
+    </h1>
+    <p class="hero-sub">
+      An <span>Information Systems</span> student passionate about
+      <span>Cybersecurity</span>, IT Infrastructure, and building cool stuff with code & hardware.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-primary">🚀 See My Projects</a>
+      <a href="#contact" class="btn btn-ghost">📬 Contact Me</a>
+      <a href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YxIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKMyAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYS1Cb2xkIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMiAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtT2JsaXF1ZSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjMgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago1IDAgb2JqCjw8Ci9Db250ZW50cyA5IDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDggMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL1BhZ2VNb2RlIC9Vc2VOb25lIC9QYWdlcyA4IDAgUiAvVHlwZSAvQ2F0YWxvZwo+PgplbmRvYmoKNyAwIG9iago8PAovQXV0aG9yIChhbm9ueW1vdXMpIC9DcmVhdGlvbkRhdGUgKEQ6MjAyNjA2MTgwMjQ0NTQrMDAnMDAnKSAvQ3JlYXRvciAoYW5vbnltb3VzKSAvS2V5d29yZHMgKCkgL01vZERhdGUgKEQ6MjAyNjA2MTgwMjQ0NTQrMDAnMDAnKSAvUHJvZHVjZXIgKFJlcG9ydExhYiBQREYgTGlicmFyeSAtIFwob3BlbnNvdXJjZVwpKSAKICAvU3ViamVjdCAodW5zcGVjaWZpZWQpIC9UaXRsZSAodW50aXRsZWQpIC9UcmFwcGVkIC9GYWxzZQo+PgplbmRvYmoKOCAwIG9iago8PAovQ291bnQgMSAvS2lkcyBbIDUgMCBSIF0gL1R5cGUgL1BhZ2VzCj4+CmVuZG9iago5IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDQ3NjYKPj4Kc3RyZWFtCkdiISNfPkJBTGgoNE1sX0VHP1JuUDkmRlpbcCQ5JUFNTiwxYDdVJDJaYTNZXEJyIVg4KCkhSSU0ZUNATF5TZlRgS01CSCc2VDEzb0QxcERlOjdwOzhTU2g6WW4vbmNdInVDY0MrLScsRzpeNm5OOmVqIkZrS3JnTVdOSiRiTDpZWUc8c15hX0IyYSdPNC5FL1JCS1w5OCpjV2RQImtSLjgpO0c3QiMvQmpiMDQ4byNXSTw8T2lPK18yOChULSUwN05wYXB0cm1lQjRGaUNQL1NSM0BUSkNrTD9EVTQ1RktYYSNrXV9eKjdsSHJqJnNvKzJxMmk/VEE2PHM5R0M/bV8hIUwraj1IJ2A7Mi1oVCE8KkFRcFlkLTcqbGclWkFQY3U5bkhjaChSJE4iQ25jSTtQOkJlWD1MbyFOMlFFL3N1TWdPc2NwWEBaI0tSOm9IYTdiPStmT2NHaTVEQ0IuOylWOUIsdF9LOnAoLnM7UiMzMDVPJjU2bS46ZWIqZHFCNl5jYWg3RFIwNC8rV1tGUCUyRkMnQjErOjo9W05LN2BkVFZ1Yy4xL0ZoMyhhbi4rY14hQFBwbDVUU1JjMWZNaXBYPkUsJ1daQGdNMjBONzdTMktkK20rPVY5SVoxL3I8KissYWolWyVMSm9VSGxiOi1BJmtrVVx1R2g7NWFjKHBDZWpEKVBBaGVxKyFmTG4ra0FdVmRDaTdyL3VTZTlCQj1dI0tMb2xvO0RzT1lVa103U21laCpgQHRLak4yc1VmbmYjXSNRKltXKlUsW21laGxBVVBwOSRsTyhbWjstP150SCokLDUqUi1vaChDXSZZOHRMTFIiPU4qOm4oLT0nbm04RkAlaCxeNSphP0tHN2hNJHV1Yl9zbzRtZ0w2Sms0R09HQ11wRVcoQlteWSdNZ3NFT3A8cThBSlBUR0AtdCQiZHBpQGlgOC1yWlVrYSRMTk5uRWZNYTRGPm8zXEUtXTZSUkZcal9RUTZaWzw/ZituQEIlL0tGVT5TVmxjPHFWayZTOWciSk4kWydoJDEzQmtLaWEuL3M6dG9iN21uND1OJmM9YmhdUW9jWk1cOW8oPj5MaWI8c1FcYDxnYW47T1U+dVRyUVNxNW4la2plTHRgXkVpMUJQZztEPUZzTjpVY2FOMzlnYExlS01vP14kbjZATTVLQ2s9Yj08JkFkXiUwVixPYmVtQSpeZStQTXNtaFF0MWs3VUFyZWRSVyQyJi4wXkRdYGdwXTFVK3NaTHQ2Km5WXyY2PT4lbl1sRUlmb1UzZlMrJmMqZEoxKWxSKCFjQWpdUS9AS11qZkAtPHFZUHRdMjV1NGhmbGFNU0s6LiVTK1UwTVpvRzEqMTsjYFZLW18zJlBbUkZHJSNQclFVYXBiPTk9SzZ0Sy5hM1k8SDFVP1hoUm4+bE4sTFdlRzZ0U2JtO1cjbFIpKUA+MmJnVWE6L1s0Lj1FXCdkOVtiaVRRWlo4PTBnL11FTFV1MiNCSUVYRDl1QU9BKTI6VTpCQDE2bkNUNC5FQjQ7aGFFL280TidHSDxXVk90bjxMNmlVZ00uSFRRL1MoZ0g6PGFrbCtcW202VXBXXmNLcmZ1Xlc7QGVrYCpLYTM2Wmw2RjZ0JHFVU1NiYUNvWlYvQSo3TkRRZSoxMDZyUjNzLWtoXjFgUlRsOkFUIlVHX1FlLVtXSycmUjpmP21JQjclNXNkUVNZJFYmZiI9bWolYmdELjlzc1IrakNeb0ttIlMqM0k/LTtRYFsqLiZCWlRlaWg2PSREXiM+QCg6QG1SS3QpdU4vWDk/Jip1Vid1WDEtK2JDXmVdaSlCc0gnJCwvc15SRiVPa2ZDVyNcMVtUZkpZTl4nOSlYSUY3XHUrayg3YzdHVUMpRzs0TyNhI0ZjcS1WI1RrNyMkaz5QJzVCYj8wU0hzYHE1PlJpM2VMNFwkKD4+Z0wtOnAoW0Y8c0VEJnEuPElnR2Y2XSlqT3VFMloyPD5mRTg8ZlJDWWZ0R0NfL3FNP3U1ZDxVUjRUMyh0V2JPLCcob0I6TTsxImJZX0NJJ1BTSypATFt0J2FYZGk0XjB0YilkN1lmYCwqQltFcjRdPElNNz5wZ0gnXnBDaGUrVChmYW1EU0QwKCVBJzUwVnItMlRRbFdVNG9YNTkxZW5tMm4oSyNmNktQMCc2cjJkJGtLI3BsbFUqP19vPD1YOEhaWTdBNVRTUWo3KFFKSXVCZjxiIWJCQU1JSSY6PUg6MFpQREQyLCJlKmVQay46Mz1pYyNZTGNHWlotb1tWQmllUDtRTi1iW1hbbl1aYmM8N3BWWzVbO1RwcSxKZG9Ea3QoPUknbzlAIVFULj5kMlU0WTlXJzlqNFtCakFDOWkibStLJGhcPzRSTk8+RFFmSiZyN2giZVd1UTwvclQuJyRlciMmVW02XVFZYmJWWTghP0pPYD4sRlolXiE8Z0lGUHVUc1UtSy10Oz1HW1NQM2NwXyI3bEQlcnFXaSQ3bW4nW0s+TTRzVydINi9WN0FRK1ZCaD00TV1aZUw6Q1twTik6YkRjLVt0cV9DcEI7Ql8mLSJOLGJWPCgvQTBeRTh0bFM4Y050bC8zVEMpSzdwXjBiWDV1NVxhT0NAVSQhcWRJWyhOVnNGJlMqVXR0byZOZD4hUElaWEFqZ0JPMSIiQWhEXCdDQGA3RzVoW1J1TG1wXzo0LW9DLE9RSVxBM11BcyIqZC82WFhkRU5rZigjLmNWcUxtT1c8dVg6TT8zR3VpTWoraCxSdEg4MylzM1svYmBdL2VAR0JTWj0rJCJVUDlRWSYyWmtEJEomazhvJzlUOl8wTmpqOSE8UTQ8N15DT1RjR3FlO25hRE9qaUIyJms+IllCK2w8Wy5ZSzJhbzRjQTAnP0dTSlFKPTRfcG9NL0kiNTk6UkdpLCslXDMzM0NJMyIzbGJfNDNtb3NibiYnZUQrKTMlaGhbP1RgVmhRJEcsVUVHS1dIaD82XVZOKyRSQ0dba1JoW3Q0S1krQlotQzk8UEU7Sid0ZVEnZUBJaiQvUl40QSphXE8sInEmZEsyJHVnUF9KZVtwVVRyRC5PV1BxXCNUZ2cqcC4pKjZXMnNjJVE0bV4+OSZuPjZVOENyTClhV2VMMW1WYztYbiorKEBxcidEWWBOYjEycT04RkkmNjZdKCwqXGohNFEpJzhPLWtUajhuTmtiR2M9JDZlSSgtQCZuXE5LLVIvYTMpYDdtP2k6PmYvVVVaM15ASmdNQTs4RGBOUVRdXGMiUmEhPWRGVDheO2RLMjU/YTxmVVQ6LTUmUUFkMmldbmwxUz9iTHRwTEUsRlJAUG1nSk1NNmZvIShpPS03QjZsJXRCOUhOcSxJaSFhS1cyO2w0I09bUystOjxLbVlgK19aUjktUXFRZmwlN2soZF9yX0drRjpabkxANTwqZjhiQj8yVz1YZ1IwX1ZDbSJJa3VuTz1xYFw5MW8sU09RL1JmWCxdMD47aixLKGk8M004bGRqWkg5WydiZVgvbHVXSDFAYFNNK1E3UFlQImYnOTdlYV1UcSlkcVptY11PJik2PFYybT5NKEhCJFhIVmNqIiUra2dWcE9VNGgsIilPJzx1WDRtOUVuXCk3VTFHWkZFZjtlOScpTC9NUSxfYU5uSUBaaWcnVk8kNWhNXDkzLUg/a0ZhOEZCcWZQRi81WDUybVtsWjg+P3FNZ0FLYWYvMCVzVChsOi0sJSNiV1VNcGxDSWtzS3MqI24zPV4jR2cxO3VeaCM1amIkYTtKWGstRj5iV19YQGNMT2c3YC00YDNoXzk1NFdEbVdXT0VwPG5tYnFcIkg0MlhUXGEsUlJpaEBgYFVnS18jbjxLNjY9J3BZa2YyS2MrR08mY19VbVouQidSJTN1J1Y/amhTOTQjOXEiTipeWXNTTGQ3VXNRQkhgTl1VV0pUTylrMCRpb2AjRSdPSXRlJjtyWy5scjduJ1JOJiUocUZkWz5UcFFYYltkRjNXMEwqKDs1OGI8T2s4I2srKGg3cSEnaDEyV2xPKSlCJ2lYcl47Ny1rLjViR0BoPCFOaWIoX2UxLzQsRTt1b2BBaHBHQC01MSJZazIhbG4xI1xiTFFuZTlSU1NBSHRhUllFRV0tT1ctUlUrImQ6SmhrSzRHUHI2KU01RiRzbkJQWFcvJF5WLTBcPWJgbkk9WEUxW2pfOFdpbDtyYWxIQEg/TT04Z3VFa0IvQSxqaUg1YDFkI1YvVldHNDYxKydDbGtxOlsqPU1WTlxMNiNOcUleUVtpcTkrKWpvUWZuSW80KjpFYEgqYVM6K1lbRVBXbmBpblkvPm1hViVcdUxQZ2dzPTxRU2YpU1gmcGRZPkJFUXA1TSNSJSZjZGdqMzcjQ2lkZl5vZytuaVUyJUJxaGBIXGJgX1A2JjtAQjBcR0AsKWcxPHR0NjE6RFhdIiNrcCxnXVtBNlcxX1UwJUEhKFRURWFIYTYiKWJaZGM8PDQoKmBZJiJTN3U/XF4mY3AyIilNdTxKMklXSk9nQ15BTSgkQUNtZnJIQVpoYjMjMUtDJW1gZFwjXk8+PHJuQ3VuMlA1Z1tUYzIzOTEob1VyPTkkaTlOZVA7OSY/NzomW0FvajZlLFk2LiJgTnA4bCVoMHEhO3BUTm9ldEA8J0slSTZmcSwlYm1lYlJcSy1uYi1NZUlDQmBkL15nW0UmNkJyQ1NpamRVOTtVRTdvdC1LIkxdT3I1OU5VZVkoczcqZFclNVpaJ1tmXj51ZmBNb2JrJSdEVlhXQlJTNTh1JVZPKVhKQ2psYmEwWkYxPk5YTixdNjhaPzI0WiFDU0AxUDRTRWg6LTkrP1AvI1xqWEMmbEVZOVM4LCZaQ0BKQCNHallKclJSQlRQXCRAdUI+bVpIOGxtInApR3E7c1U8U3VALlN1Xl80Uzg6PSRvQiY6bDloMD00Wz9pJmYkRHU/YzBiVkA5JjFIOEUpWixQMDBWJiwpblxLJE4rR2tDNiNoVE00LlgtYWNNWT8qQEQ9NClxNGpXOkg8aEoiZl1GR09KQnQ1bmFrLGw7IUgrdSNUYWc+Ll1cQ0pGIj5UWEFRKXIwWEUyNjRQTUNgOiY/ciVpaG9LKGtvSW8yJitqcWVFaWdzNidiSjZVZlNZPWQ4LkpPQ2o3ckpWbHVSN0BnbiZdbTlYMERoXUhuKy1CblJUO20pW09acDkvPzklQzEvWlVfKzlsTEJYXy8rYFhmM0wubGNiNT8nNkojbXBdNyVHZyprVXFPLzZfN11GSCgyaVk6XVJpYGo2JVcqOjI8LEJjbiZcJ0VxTWFpTU5sYyovc2EuaGxdbUdPVHAkLklvallUPVM8dEVBZywjWDVMWVU+Qls8MCdWazJ0KmJtT0YqKEciSUVvMVEvRzBBcGlqQmxwI3FPVk5tTDs0KVFgXmheSzxLZ11CNnJzNSkoT2o+aUY9RmkpWk1UKGFcTmZHKixxNUhfJE1gMDslSzFKPysmWDJxaFYqPl5QNyZLaEdDMUk0SDk1UVlBL2JbLE85biNvOz0tdSREZWFjdVZeJ24hMHFvZEIrSjpPQlpcMDVuOzxWP2FbYyRLTjhmLSYtWy5dMjxwNy1YNG1Pb2duMFJZZ3JDbDFAbio1LTU7UFI+cCZxZWMrLzBzKW8lIktMLV44LiVlUT5uWHVwWT8pRm5vclRfYT1rIjpbITlmK0hSRGtRZUg1IW8xN1dCKGMpQnJubipCNSV0Y3BhbEZAJF4yZU5GQ11CYmFKVyVwciZNRVtnK0crTDAqUU8hNlJNIylIOGVVNmZEc2FWbVU5MSJTXj0wK2dLWCYhXmhLPCZUUmZPY05jLEosJW4lMi9cPks5bDlUPFRCaydjcCI/Mj5cTUA+XlJxRilGaW4mNUpEUid0cDVMXFRzcmlWVXJGQG9YaWJQS1FBazNscEAwZ0A8R2csLVM8YmwpUSs2O0ViZnJUbDNxclxXXDsvZjtFNmNiJ1pCbTlFKzFQVlhQMF1NOF8wLFBgJVctLCcyRjo3JFp0SFcpSFRGMEwkZihYPSRIITkpQ1ZYdEJxL08lVSJbPmxiKkJsdVB1WUMqKDhCJ11CSE5UMCYlLk41NHNIVnVSQTUqKWs/KThVLDokSUkjOTkiO0g8N3MyMHBDLipwQENHZ3JORUVZKkgyZV9QXEInU2htY3QiX1xCciQvWClqaWY4Wiw9J2tlPGlZcFVyQ0YoR3JWbE1oMjlFZkNbIThOXlBVJWNiSl8vWnFqRmVYKCowJGdhNnMqP2kiPypVKzNyREohTTEyMzg3Kz8mVEFCV0QtYTU3OTdyTihtWUdybkFBQWInYk9DdT1wJlNnSzVwR0M5Q0dCZjBFMixiPlJRR34+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgMTAKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDYxIDAwMDAwIG4gCjAwMDAwMDAxMTIgMDAwMDAgbiAKMDAwMDAwMDIxOSAwMDAwMCBuIAowMDAwMDAwMzMxIDAwMDAwIG4gCjAwMDAwMDA0NDYgMDAwMDAgbiAKMDAwMDAwMDY0OSAwMDAwMCBuIAowMDAwMDAwNzE3IDAwMDAwIG4gCjAwMDAwMDA5NzggMDAwMDAgbiAKMDAwMDAwMTAzNyAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9JRCAKWzxmNGRmMzE1NDgwNWZmYjQwODA1YzM1NmFiNTlkN2RjOT48ZjRkZjMxNTQ4MDVmZmI0MDgwNWMzNTZhYjU5ZDdkYzk+XQolIFJlcG9ydExhYiBnZW5lcmF0ZWQgUERGIGRvY3VtZW50IC0tIGRpZ2VzdCAob3BlbnNvdXJjZSkKCi9JbmZvIDcgMCBSCi9Sb290IDYgMCBSCi9TaXplIDEwCj4+CnN0YXJ0eHJlZgo1ODk0CiUlRU9GCg==" download="CV_Ion_Sugara_Putra_Subekti.pdf">📄 Download CV</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+  <div class="reveal">
+    <div class="sec-eyebrow">About Me</div>
+    <h2 class="sec-title">Who am <span>I?</span></h2>
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <div class="about-img-card">
+          <div class="about-img-inner">🧑‍💻</div>
+        </div>
+        <div class="about-floating">
+          <div class="float-num">25 Juz</div>
+          <div class="float-label">Quran Memorized ✓</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <p>
+          Halo! Saya <strong>Ion Sugara Putra Subekti</strong>, mahasiswa <strong>Sistem Informasi</strong> di Universitas Terbuka Surakarta. Saya memiliki ketertarikan besar di bidang cybersecurity, IT infrastructure, dan pengembangan teknologi.
+        </p>
+        <p>
+          Saat ini sedang menyelesaikan magang di <strong>PT Pertamina (Persero) RU V Balikpapan</strong> divisi IT — mulai dari Windows deployment via SCCM, CCTV setup, sampai SIEM/SOC incident filtering.
+        </p>
+        <p>
+          Berlatar belakang pesantren dengan hafalan <strong>25 Juz Al-Quran</strong>, skor TOAFL 597, dan kemampuan Bahasa Arab level advanced. Di luar IT, saya hobi utak-atik <strong>ESP32 microcontroller</strong>, RC car drift 1:10 skala, dan modifikasi Honda Jazz GE8 Hybrid.
+        </p>
+        <div class="about-chips">
+          <span class="chip">🇮🇩 Indonesian</span>
+          <span class="chip">🇬🇧 English</span>
+          <span class="chip">🕌 Arabic (Advanced)</span>
+          <span class="chip">⚡ ESP32 Hobbyist</span>
+          <span class="chip">🚗 Automotive</span>
+          <span class="chip">🎮 Racing Games</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row reveal">
+  <div class="stat-card"><div class="stat-n">5+</div><div class="stat-l">Certifications</div></div>
+  <div class="stat-card"><div class="stat-n">7+</div><div class="stat-l">Projects Built</div></div>
+  <div class="stat-card"><div class="stat-n">3</div><div class="stat-l">Languages Spoken</div></div>
+  <div class="stat-card"><div class="stat-n">25</div><div class="stat-l">Juz Memorized</div></div>
+</div>
+
+<!-- SKILLS -->
+<div class="section" id="skills">
+  <div class="reveal">
+    <div class="sec-eyebrow">My Skills</div>
+    <h2 class="sec-title">Tech <span>Stack & Tools</span></h2>
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="sk-header">
+          <div class="sk-icon">🔐</div>
+          <div class="sk-title">Cybersecurity</div>
+        </div>
+        <div class="sk-tags">
+          <span class="stag stag-green">Ethical Hacking</span>
+          <span class="stag stag-green">Burp Suite</span>
+          <span class="stag stag-green">Kali Linux</span>
+          <span class="stag stag-green">Parrot OS</span>
+          <span class="stag stag-green">Nmap</span>
+          <span class="stag stag-green">Pen Testing</span>
+          <span class="stag stag-green">SQL Injection</span>
+          <span class="stag stag-green">Social Engineering</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sk-header">
+          <div class="sk-icon">💻</div>
+          <div class="sk-title">Programming</div>
+        </div>
+        <div class="sk-tags">
+          <span class="stag stag-purple">Python</span>
+          <span class="stag stag-purple">JavaScript</span>
+          <span class="stag stag-purple">Vue.js</span>
+          <span class="stag stag-purple">HTML & CSS</span>
+          <span class="stag stag-purple">C++ (Arduino)</span>
+          <span class="stag stag-purple">R (RStudio)</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sk-header">
+          <div class="sk-icon">🌐</div>
+          <div class="sk-title">Networking & IT Ops</div>
+        </div>
+        <div class="sk-tags">
+          <span class="stag stag-blue">TCP/IP</span>
+          <span class="stag stag-blue">VLAN / VTP</span>
+          <span class="stag stag-blue">Cisco Packet Tracer</span>
+          <span class="stag stag-blue">SCCM</span>
+          <span class="stag stag-blue">SOAR / SIEM</span>
+          <span class="stag stag-blue">COBIT</span>
+          <span class="stag stag-blue">ITU-T X.805</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sk-header">
+          <div class="sk-icon">🔧</div>
+          <div class="sk-title">Hardware & IoT</div>
+        </div>
+        <div class="sk-tags">
+          <span class="stag stag-pink">ESP32</span>
+          <span class="stag stag-pink">Arduino IDE</span>
+          <span class="stag stag-pink">OLED (U8g2)</span>
+          <span class="stag stag-pink">CAN Bus</span>
+          <span class="stag stag-pink">MCP2515</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sk-header">
+          <div class="sk-icon">🛠️</div>
+          <div class="sk-title">Tools & Platforms</div>
+        </div>
+        <div class="sk-tags">
+          <span class="stag stag-purple">GitHub Pages</span>
+          <span class="stag stag-purple">XAMPP</span>
+          <span class="stag stag-purple">Apache</span>
+          <span class="stag stag-purple">Python ReportLab</span>
+          <span class="stag stag-purple">VS Code</span>
+          <span class="stag stag-purple">Git</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sk-header">
+          <div class="sk-icon">📊</div>
+          <div class="sk-title">Office & Productivity</div>
+        </div>
+        <div class="sk-tags">
+          <span class="stag stag-blue">Microsoft Office</span>
+          <span class="stag stag-blue">Google Sheets</span>
+          <span class="stag stag-blue">Google Slides</span>
+          <span class="stag stag-blue">PowerPoint</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="section" id="education">
+  <div class="reveal">
+    <div class="sec-eyebrow">Education</div>
+    <h2 class="sec-title">My <span>Educational Background</span></h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="edu-title">Universitas Terbuka — Surakarta</div>
+          <div class="edu-sub">Undergraduate in Information Systems (S1 Sistem Informasi)</div>
+          <span class="edu-period">2023 — Present</span>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">📚</div>
+        <div>
+          <div class="edu-title">Imam Bukhori Boarding School</div>
+          <div class="edu-sub">High School — Arabic Language & Islamic Studies Program</div>
+          <span class="edu-period">2018 — 2021</span>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">🕌</div>
+        <div>
+          <div class="edu-title">Imam Bukhori Boarding School</div>
+          <div class="edu-sub">Middle School — Arabic Language & Islamic Studies Program</div>
+          <span class="edu-period">2015 — 2018</span>
+        </div>
+      </div>
+      <div class="edu-card" style="border-color:rgba(244,114,182,.25);background:rgba(244,114,182,.03)">
+        <div class="edu-icon" style="background:linear-gradient(135deg,var(--pink),var(--accent2))">🏆</div>
+        <div>
+          <div class="edu-title">Achievement</div>
+          <div class="edu-sub">Memorized 25 Juz Al-Quran · TOAFL Score 597 · Discovered SQL Injection on campus websites</div>
+          <span class="edu-period" style="color:var(--pink);background:rgba(244,114,182,.1);border-color:rgba(244,114,182,.2)">Notable</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section" id="experience">
+  <div class="reveal">
+    <div class="sec-eyebrow">Experience</div>
+    <h2 class="sec-title">Work <span>Experiences</span></h2>
+    <div class="exp-list">
+
+      <div class="exp-card active-exp">
+        <div class="exp-logo">🏭</div>
+        <div>
+          <div class="exp-role">IT Division Intern</div>
+          <div class="exp-company">PT Pertamina (Persero) RU V Balikpapan</div>
+          <div class="exp-period">Balikpapan, East Kalimantan · Internship</div>
+          <div class="exp-active-badge"><span></span>Currently Active — 1 Mei 2026 – 30 Jun 2026</div>
+          <ul class="exp-bullets">
+            <li>Windows 11 deployment and imaging across multiple workstations via SCCM</li>
+            <li>CCTV monitoring system setup, configuration, and maintenance</li>
+            <li>Printer/scanner setup and end-user IT technical support</li>
+            <li>Podcast technical support for internal corporate events</li>
+            <li>SOAR security incident log filtering — SOC/SIEM support</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-logo">📋</div>
+        <div>
+          <div class="exp-role">Course Manager</div>
+          <div class="exp-company">Salam Cendekia — Indonesia</div>
+          <div class="exp-period">Indonesia · Part Time · 2023</div>
+          <ul class="exp-bullets">
+            <li>Designed and developed course structures and educational program content</li>
+            <li>Collaborated with instructors to maintain quality standards</li>
+            <li>Monitored student progress and implemented targeted support strategies</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-logo">🕌</div>
+        <div>
+          <div class="exp-role">Teaching Assistant & Quran Memorization Supervisor</div>
+          <div class="exp-company">Imam Bukhori Boarding School — Surakarta</div>
+          <div class="exp-period">Surakarta, Central Java · Jun 2021 – Jul 2022</div>
+          <ul class="exp-bullets">
+            <li>Taught Arabic language & Islamic studies to 12 classes with 30+ students each</li>
+            <li>Supervised Quranic memorization instructors and ensured program accuracy</li>
+            <li>Managed daily activities of 18 middle school boarding house students</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CERTS -->
+<div class="section" id="certs">
+  <div class="reveal">
+    <div class="sec-eyebrow">Certifications</div>
+    <h2 class="sec-title">Certificates <span>I've Earned</span></h2>
+    <div class="cert-grid">
+
+      <div class="cert-card">
+        <div class="cert-badge cisco">🎯</div>
+        <div>
+          <div class="cert-name">Ethical Hacker</div>
+          <div class="cert-issuer">Cisco Networking Academy</div>
+          <div class="cert-date">Jun 18, 2026</div>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-badge cisco">🛡️</div>
+        <div>
+          <div class="cert-name">Introduction to Cybersecurity</div>
+          <div class="cert-issuer">Cisco Networking Academy</div>
+          <div class="cert-date">Jun 18, 2026</div>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-badge udemy">🐍</div>
+        <div>
+          <div class="cert-name">100 Days of Code: Complete Python Pro Bootcamp</div>
+          <div class="cert-issuer">Udemy — Pruthviraja L</div>
+          <div class="cert-date">Dec 19, 2024</div>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-badge ati">⚙️</div>
+        <div>
+          <div class="cert-name">Basic Instrumentation for Process Plant</div>
+          <div class="cert-issuer">Engineering Academy — Anak Teknik Indonesia</div>
+          <div class="cert-date">Jun 05, 2025 · ID: BIFP-VI-25-ATI-0241</div>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-badge forti">🔒</div>
+        <div>
+          <div class="cert-name">Introduction to Threat Landscape 2.0</div>
+          <div class="cert-issuer">Fortinet Training Institute</div>
+          <div class="cert-date">Jun 2024</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+  <div class="reveal">
+    <div class="sec-eyebrow">Portfolio</div>
+    <h2 class="sec-title">Projects <span>I've Built</span></h2>
+    <div class="proj-grid">
+
+      <div class="proj-card">
+        <div class="proj-thumb">📦</div>
+        <div class="proj-body">
+          <div class="proj-name">SITTA — Stock & Delivery Order Tracker</div>
+          <div class="proj-desc">Web app untuk manajemen inventaris dan tracking delivery order. Dibangun sebagai proyek praktik Universitas Terbuka.</div>
+          <div class="proj-tags">
+            <span class="stag stag-purple">Vue.js</span>
+            <span class="stag stag-purple">JavaScript</span>
+            <span class="stag stag-blue">HTML/CSS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-thumb">🍜</div>
+        <div class="proj-body">
+          <div class="proj-name">Mie Ayam Mas Fajar Website</div>
+          <div class="proj-desc">Website GitHub Pages untuk UMKM lokal Mie Ayam Kartotiyasan Mas Fajar Surakarta. Proyek pengabdian masyarakat MK-PM.</div>
+          <div class="proj-tags">
+            <span class="stag stag-blue">HTML</span>
+            <span class="stag stag-blue">CSS</span>
+            <span class="stag stag-green">GitHub Pages</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-thumb">📟</div>
+        <div class="proj-body">
+          <div class="proj-name">ESP32 OLED Animated Display</div>
+          <div class="proj-desc">Animated OLED display dengan ESP32 + U8g2 library. Lyric scroll "About You" by The 1975 & Honda Jazz startup dashboard screen.</div>
+          <div class="proj-tags">
+            <span class="stag stag-pink">ESP32</span>
+            <span class="stag stag-pink">Arduino IDE</span>
+            <span class="stag stag-pink">C++</span>
+            <span class="stag stag-pink">U8g2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-thumb">🔍</div>
+        <div class="proj-body">
+          <div class="proj-name">SQL Injection Security Research</div>
+          <div class="proj-desc">Menemukan dan melaporkan celah SQL Injection pada website kampus dan sekolah. Responsible disclosure untuk meningkatkan keamanan sistem.</div>
+          <div class="proj-tags">
+            <span class="stag stag-green">Burp Suite</span>
+            <span class="stag stag-green">SQL Injection</span>
+            <span class="stag stag-green">Pen Testing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-thumb">🌐</div>
+        <div class="proj-body">
+          <div class="proj-name">Cisco VLAN/VTP Lab</div>
+          <div class="proj-desc">Konfigurasi topologi jaringan VLAN/VTP di Cisco Packet Tracer dengan dokumentasi laporan praktikum lengkap.</div>
+          <div class="proj-tags">
+            <span class="stag stag-blue">Cisco</span>
+            <span class="stag stag-blue">VLAN/VTP</span>
+            <span class="stag stag-blue">Packet Tracer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-thumb">💳</div>
+        <div class="proj-body">
+          <div class="proj-name">BPMN Cashless Payment System</div>
+          <div class="proj-desc">Perancangan diagram BPMN untuk alur sistem pembayaran cashless. Tugas mata kuliah Analisis Sistem Informasi.</div>
+          <div class="proj-tags">
+            <span class="stag stag-purple">BPMN</span>
+            <span class="stag stag-purple">Systems Analysis</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <div class="reveal">
+    <div class="contact-wrap">
+      <div class="sec-eyebrow" style="justify-content:center">Get in Touch</div>
+      <h2 class="contact-title">Let's <span style="background:linear-gradient(135deg,var(--accent2),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Talk!</span> 📨</h2>
+      <p class="contact-sub">Terbuka untuk kolaborasi, diskusi teknologi, atau sekadar ngobrol soal cybersecurity dan IoT. Feel free!</p>
+      <div class="contact-cards">
+        <a href="mailto:ionsugara23@gmail.com" class="contact-card">
+          <div class="contact-card-icon">📧</div>
+          <div class="contact-card-label">Gmail</div>
+          <div class="contact-card-val">ionsugara23@gmail.com</div>
+        </a>
+        <a href="https://wa.me/6281246524497" class="contact-card">
+          <div class="contact-card-icon">💬</div>
+          <div class="contact-card-label">WhatsApp</div>
+          <div class="contact-card-val">+62 812-4652-4497</div>
+        </a>
+        <a href="https://github.com/ionsugara" class="contact-card">
+          <div class="contact-card-icon">🐙</div>
+          <div class="contact-card-label">GitHub</div>
+          <div class="contact-card-val">github.com/ionsugara</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>Ion Sugara Putra Subekti</span> · Information Systems Student · Universitas Terbuka Surakarta · © 2026
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('in');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
